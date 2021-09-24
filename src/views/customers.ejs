@@ -1,57 +1,149 @@
 <% include partials/_header %>
 
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-7">
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <td>n°</td>
-            <td>Name</td>
-            <td>Address</td>
-            <td>Phone</td>
-            <td>Actions</td>
-          </tr>
-        </thead>
-        <tbody>
-          <% if (data) { %>
-            <% for(var i = 0; i < data.length; i++) { %>
-              <tr>
-                <td><%= (i + 1) %></td>
-                <td><%= data[i].name %></td>
-                <td><%= data[i].address %></td>
-                <td><%= data[i].phone %></td>
-                <td>
-                  <a href="/update/<%= data[i].id %>" class="btn btn-info">Edit</a>
-                  <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
-            <% } %>
-          <% } %>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-md-5">
-      <div class="card-body">
-
-        <form action="/add" method="POST">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="Name" class="form-control" autofocus>
-          </div>
-          <div class="form-group">
-            <input type="text" name="address" placeholder="Address" class="form-control">
-          </div>
-          <div class="form-group">
-            <input type="text" name="phone" placeholder="Phone" class="form-control">
-          </div>
-
-          <button type="submit" class="btn btn-primary">
-            save customer
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
+</style>
+<br>
+<hr>
+<div class="container">
+  <h1 class="text-center">DIACO</h1>
+  <h2>Nueva Queja</h2>
+  <br>
+  <p>Llena los siguientes datos del proveedor.</p>
 </div>
+
+<div class="container">
+  
+    <div class="card p-4">
+      <h2>Datos del Proveedor</h2>
+      <form action="/add" method="POST" class="row row g-3">
+        
+        <!--textbox empresa-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">Empresa</label>
+          <input type="text" name="name"  class="form-control" autofocus>
+        </div>
+
+        <!--textbox Razon Social-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">Razon Social</label>
+          <input type="text" name="address"  class="form-control">
+        </div>
+
+        <!--textbox NIT-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">NIT</label>
+          <input type="text" name="phone"  class="form-control">
+        </div>
+
+        <!--textbox Direccion-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">Direccion</label>
+          <input type="text" name="name"  class="form-control" autofocus>
+        </div>
+
+        <!--textbox Telefono-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">Telefono</label>
+          <input type="text" name="address"  class="form-control">
+        </div>
+
+        <!--textbox Correo-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">Correo</label>
+          <input type="text" name="phone"  class="form-control">
+        </div>
+
+        <!--textbox Region-->
+        <div class="form-group col-md-3">
+          <label for="validationServer01" class="form-label">Region</label>
+          <br>
+          <select class=" bg-dark p-3 text-white " name="region" width=100% >
+            <option selected>Seleccionar</option>
+            <option value="1">central</option>
+            <option value="2">sur</option>
+            <option value="3">norte</option>
+          </select>
+
+
+        </div>
+
+        <!--textbox Departamento-->
+        <div class="form-group col-md-3">
+          <label for="validationServer01" class="form-label">Departamento</label>
+          <br>
+          <select class=" bg-dark p-3 text-white" name="departamento">
+            <option selected>Seleccionar</option>
+            <option value="1">central</option>
+            <option value="2">sur</option>
+            <option value="3">norte</option>
+          </select>
+        </div>
+
+        <!--textbox Municipio-->
+        <div class="form-group col-md-3">
+          <label for="validationServer01" class="form-label">Municipio</label>
+          <br>
+          <select class=" bg-dark p-3 text-white" name="Municipio">
+            <option selected>Seleccionar</option>
+            <option value="1">central</option>
+            <option value="2">sur</option>
+            <option value="3">norte</option>
+          </select>
+        </div>
+
+        <!--textbox zona-->
+        <div class="form-group col-md-3">
+          <label for="validationServer01" class="form-label">Zona</label>
+          <input type="text" name="phone"  class="form-control">
+        </div>
+
+        <div class="p-4  col-md-12">
+          <h2>Datos de la Queja</h2>
+        </div>
+    
+        <!--textbox No. de Documento-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">Numero de Documento</label>
+          <input type="text" name="name"  class="form-control" autofocus>
+        </div>
+
+        <!--textbox Fecha de Documento-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">Fecha de Documento</label>
+          <input type="text" name="address"  class="form-control">
+        </div>
+
+        <!--textbox Detalle-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">Detalle</label>
+          <input type="text" name="phone"  class="form-control">
+        </div>
+
+        <!--textbox Solicitud-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">Solicitud</label>
+          <input type="text" name="name"  class="form-control" autofocus>
+        </div>
+
+        <!--textbox Sede DIACO-->
+        <div class="form-group col-md-4">
+          <label for="validationServer01" class="form-label">Sede DIACO</label>
+          <input type="text" name="address"  class="form-control">
+        </div>
+
+
+
+
+        <div class="  col-md-12">
+          <button type="submit" class="btn btn-outline-success ">
+            ENVIAR QUEJA
+          </button>
+        </div>
+       
+      </form>
+    </div>
+  
+</div>
+
+
 
 <% include partials/_footer %>
