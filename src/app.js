@@ -6,6 +6,15 @@ const express = require('express'),
 
 const app = express();
 
+
+// seteamos urlencoded para capturar los datos de formularios
+app.use(express.urlencoded({extended:false}))
+app.use(express.json())
+
+/*
+require('dotenv');
+dotenv.config({path:'./env/.env'})
+*/
 // importing routes
 const customerRoutes = require('./routes/customer');
 

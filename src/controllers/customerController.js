@@ -46,6 +46,20 @@ controller.update = (req, res) => {
   });
 };
 
+controller.inicio = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM Queja', (err, customers) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('login', {
+        
+     });
+    });
+  });
+};
+
+
 controller.delete = (req, res) => {
   const { id } = req.params;
   req.getConnection((err, connection) => {
